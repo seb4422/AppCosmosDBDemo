@@ -13,8 +13,8 @@ public class CosmosService : ICosmosService
     public CosmosService()
     {
         _client = new CosmosClient(
-            connectionString: "AccountEndpoint=https://cosmosarw.documents.azure.com:443/;AccountKey=pX6CUdgH2fDQoEJBWPrXAfjHq0DHccuGyVCSPXa7VkbOwAoNveh5eo7gI2FLII50jcvLJV0W9ZfuACDbcTDAoQ==;"
-        ,
+            connectionString: "AccountEndpoint=https://cosmosarw.documents.azure.com:443/;AccountKey=pX6CUdgH2fDQoEJBWPrXAfjHq0DHccuGyVCSPXa7VkbOwAoNveh5eo7gI2FLII50jcvLJV0W9ZfuACDbcTDAoQ==;",
+        
         new CosmosClientOptions()
         {
             ApplicationRegion = Regions.FranceCentral,
@@ -23,7 +23,7 @@ public class CosmosService : ICosmosService
 
     private Container container
     {
-        get => _client.GetDatabase("cosmicworks").GetContainer("products");
+        get => _client.GetDatabase("cosmicworks").GetContainer("Products");
     }
 
     public async Task<IEnumerable<Product>> RetrieveAllProductsAsync()
