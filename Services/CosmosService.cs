@@ -23,7 +23,7 @@ public class CosmosService : ICosmosService
 
     private Container container
     {
-        get => _client.GetDatabase("cosmicworks").GetContainer("Products");
+        get => _client.GetDatabase("cosmicworks").GetContainer("products");
     }
 
     public async Task<IEnumerable<Product>> RetrieveAllProductsAsync()
